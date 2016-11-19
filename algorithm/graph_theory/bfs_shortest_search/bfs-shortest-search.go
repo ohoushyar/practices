@@ -49,7 +49,6 @@ func (s *Queue) Len() int64 {
 
 type Vertex struct {
     name int
-    // adj *list.List
     adj map[int]bool
     dist int
     seen bool
