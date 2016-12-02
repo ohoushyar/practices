@@ -22,8 +22,8 @@ func main() {
 }
 
 func quick(a []int) []int {
-    if len(a) == 0 {
-        return make([]int, 0)
+    if len(a) <= 1 {
+        return a
     }
     debug(fmt.Sprintf("... %v", a))
 
@@ -46,10 +46,8 @@ func quick(a []int) []int {
     right = quick(right)
 
     sorted := merge( left, equal, right )
-    if len(sorted) > 1 {
-        print_arr( sorted )
-        fmt.Println()
-    }
+    print_arr( sorted )
+    fmt.Println()
 
     return sorted
 }
